@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/logo.png" alt="Sole-arium logo" width="200" />
+  <img src="logo.png" alt="Sole-arium logo" width="200" />
 </p>
 
 <h1 align="center">Sole-arium</h1>
