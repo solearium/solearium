@@ -1,0 +1,36 @@
+flavors:
+  development:
+    app:
+      name: "Solearium Dev"
+    android:
+      applicationId: "com.example.solearium.dev"
+    ios:
+      bundleId: "com.example.solearium.dev"
+      buildSettings:
+        # Development Team ID (Optional - add if needed)
+        # DEVELOPMENT_TEAM: "YOUR_TEAM_ID"
+    macos:
+      bundleId: "com.example.solearium.dev"
+      
+  staging:
+    app:
+      name: "Solearium Staging"
+    android:
+      applicationId: "com.example.solearium.staging"
+    ios:
+      bundleId: "com.example.solearium.staging"
+    macos:
+      bundleId: "com.example.solearium.staging"
+
+  production:
+    app:
+      name: "Solearium"
+    android:
+      applicationId: "com.example.solearium"
+    ios:
+      bundleId: "com.example.solearium"
+    macos:
+      bundleId: "com.example.solearium"
+
+instructions:
+  - "Run `flutter pub run flutter_flavorizr` to generate flavor setup."
