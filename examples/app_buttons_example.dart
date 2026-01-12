@@ -1,30 +1,34 @@
 import 'package:flutter/material.dart';
-import 'package:solearium/src/core/widgets/atoms/buttons/kit_button_size.dart';
-import 'package:solearium/src/core/widgets/atoms/buttons/kit_button_state.dart';
-import 'package:solearium/src/core/widgets/atoms/buttons/kit_destructive_button.dart';
-import 'package:solearium/src/core/widgets/atoms/buttons/kit_ghost_button.dart';
-import 'package:solearium/src/core/widgets/atoms/buttons/kit_icon_button.dart';
-import 'package:solearium/src/core/widgets/atoms/buttons/kit_link_button.dart';
-import 'package:solearium/src/core/widgets/atoms/buttons/kit_outline_button.dart';
-import 'package:solearium/src/core/widgets/atoms/buttons/kit_primary_button.dart';
-import 'package:solearium/src/core/widgets/atoms/buttons/kit_secondary_button.dart';
+import 'package:solearium/src/core/widgets/atoms/buttons/app_button_size.dart';
+import 'package:solearium/src/core/widgets/atoms/buttons/app_button_state.dart';
+import 'package:solearium/src/core/widgets/atoms/buttons/app_destructive_button.dart';
+import 'package:solearium/src/core/widgets/atoms/buttons/app_ghost_button.dart';
+import 'package:solearium/src/core/widgets/atoms/buttons/app_icon_button.dart';
+import 'package:solearium/src/core/widgets/atoms/buttons/app_link_button.dart';
+import 'package:solearium/src/core/widgets/atoms/buttons/app_outline_button.dart';
+import 'package:solearium/src/core/widgets/atoms/buttons/app_primary_button.dart';
+import 'package:solearium/src/core/widgets/atoms/buttons/app_secondary_button.dart';
 
-/// A gallery widget that displays all available Kit buttons in their
+void main() {
+  runApp(const MaterialApp(home: AppButtonsExample()));
+}
+
+/// A gallery widget that displays all available App buttons in their
 /// various states and sizes.
-class KitButtonsExample extends StatelessWidget {
-  const KitButtonsExample({super.key});
+class AppButtonsExample extends StatelessWidget {
+  const AppButtonsExample({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Kit Buttons Gallery')),
+      appBar: AppBar(title: const Text('App Buttons Gallery')),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(24),
         child: Column(
           children: [
             _buildSection(
               'Primary Button',
-              (size, state, leading, trailing) => KitPrimaryButton(
+              (size, state, leading, trailing) => AppPrimaryButton(
                 onPressed: () {},
                 size: size,
                 state: state,
@@ -36,7 +40,7 @@ class KitButtonsExample extends StatelessWidget {
             const Divider(height: 48),
             _buildSection(
               'Secondary Button',
-              (size, state, leading, trailing) => KitSecondaryButton(
+              (size, state, leading, trailing) => AppSecondaryButton(
                 onPressed: () {},
                 size: size,
                 state: state,
@@ -48,7 +52,7 @@ class KitButtonsExample extends StatelessWidget {
             const Divider(height: 48),
             _buildSection(
               'Outline Button',
-              (size, state, leading, trailing) => KitOutlineButton(
+              (size, state, leading, trailing) => AppOutlineButton(
                 onPressed: () {},
                 size: size,
                 state: state,
@@ -60,7 +64,7 @@ class KitButtonsExample extends StatelessWidget {
             const Divider(height: 48),
             _buildSection(
               'Destructive Button',
-              (size, state, leading, trailing) => KitDestructiveButton(
+              (size, state, leading, trailing) => AppDestructiveButton(
                 onPressed: () {},
                 size: size,
                 state: state,
@@ -72,7 +76,7 @@ class KitButtonsExample extends StatelessWidget {
             const Divider(height: 48),
             _buildSection(
               'Ghost Button',
-              (size, state, leading, trailing) => KitGhostButton(
+              (size, state, leading, trailing) => AppGhostButton(
                 onPressed: () {},
                 size: size,
                 state: state,
@@ -82,17 +86,7 @@ class KitButtonsExample extends StatelessWidget {
               ),
             ),
             const Divider(height: 48),
-            _buildSection(
-              'Link Button',
-              (size, state, leading, trailing) => KitLinkButton(
-                onPressed: () {},
-                size: size,
-                state: state,
-                leading: leading,
-                trailing: trailing,
-                child: const Text('Link'),
-              ),
-            ),
+            _buildLinkButtonSection(),
             const Divider(height: 48),
             _buildIconButtonSection(),
           ],
@@ -101,11 +95,46 @@ class KitButtonsExample extends StatelessWidget {
     );
   }
 
+  Widget _buildLinkButtonSection() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        const Text(
+          'Link Button',
+          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+        ),
+        const SizedBox(height: 16),
+        _buildRowLabel('States'),
+        Wrap(
+          spacing: 16,
+          runSpacing: 16,
+          crossAxisAlignment: WrapCrossAlignment.center,
+          children: [
+            AppLinkButton(
+              onPressed: () {},
+              text: 'Enabled',
+            ),
+            AppLinkButton(
+              onPressed: () {},
+              text: 'Disabled',
+              state: AppButtonState.disabled,
+            ),
+            AppLinkButton(
+              onPressed: () {},
+              text: 'Loading',
+              state: AppButtonState.loading,
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+
   Widget _buildSection(
     String title,
     Widget Function(
-      KitButtonSize size,
-      KitButtonState state,
+      AppButtonSize size,
+      AppButtonState state,
       Widget? leading,
       Widget? trailing,
     )
@@ -125,9 +154,9 @@ class KitButtonsExample extends StatelessWidget {
           runSpacing: 16,
           crossAxisAlignment: WrapCrossAlignment.center,
           children: [
-            builder(KitButtonSize.large, KitButtonState.enabled, null, null),
-            builder(KitButtonSize.medium, KitButtonState.enabled, null, null),
-            builder(KitButtonSize.small, KitButtonState.enabled, null, null),
+            builder(AppButtonSize.large, AppButtonState.enabled, null, null),
+            builder(AppButtonSize.medium, AppButtonState.enabled, null, null),
+            builder(AppButtonSize.small, AppButtonState.enabled, null, null),
           ],
         ),
         const SizedBox(height: 16),
@@ -137,9 +166,9 @@ class KitButtonsExample extends StatelessWidget {
           runSpacing: 16,
           crossAxisAlignment: WrapCrossAlignment.center,
           children: [
-            builder(KitButtonSize.medium, KitButtonState.enabled, null, null),
-            builder(KitButtonSize.medium, KitButtonState.disabled, null, null),
-            builder(KitButtonSize.medium, KitButtonState.loading, null, null),
+            builder(AppButtonSize.medium, AppButtonState.enabled, null, null),
+            builder(AppButtonSize.medium, AppButtonState.disabled, null, null),
+            builder(AppButtonSize.medium, AppButtonState.loading, null, null),
           ],
         ),
         const SizedBox(height: 16),
@@ -150,20 +179,20 @@ class KitButtonsExample extends StatelessWidget {
           crossAxisAlignment: WrapCrossAlignment.center,
           children: [
             builder(
-              KitButtonSize.medium,
-              KitButtonState.enabled,
+              AppButtonSize.medium,
+              AppButtonState.enabled,
               const Icon(Icons.check, size: 18),
               null,
             ),
             builder(
-              KitButtonSize.medium,
-              KitButtonState.enabled,
+              AppButtonSize.medium,
+              AppButtonState.enabled,
               null,
               const Icon(Icons.arrow_forward, size: 18),
             ),
             builder(
-              KitButtonSize.medium,
-              KitButtonState.enabled,
+              AppButtonSize.medium,
+              AppButtonState.enabled,
               const Icon(Icons.check, size: 18),
               const Icon(Icons.arrow_forward, size: 18),
             ),
@@ -187,18 +216,18 @@ class KitButtonsExample extends StatelessWidget {
           runSpacing: 16,
           crossAxisAlignment: WrapCrossAlignment.center,
           children: [
-            KitIconButton(
+            AppIconButton(
               onPressed: () {},
               icon: const Icon(Icons.add),
               tooltip: 'Default',
             ),
-            KitIconButton(
+            AppIconButton(
               onPressed: () {},
               icon: const Icon(Icons.delete),
               color: Colors.red,
               tooltip: 'Colored',
             ),
-            KitIconButton(
+            AppIconButton(
               onPressed: () {},
               icon: const Icon(Icons.settings),
               backgroundColor: Colors.grey.withValues(alpha: 0.2),

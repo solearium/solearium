@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:solearium/src/core/widgets/atoms/buttons/kit_base_button.dart';
-import 'package:solearium/src/core/widgets/atoms/buttons/kit_button_size.dart';
-import 'package:solearium/src/core/widgets/atoms/buttons/kit_button_state.dart';
-import 'package:solearium/src/core/widgets/atoms/buttons/kit_button_tokens.dart';
+import 'package:solearium/src/core/widgets/atoms/buttons/app_base_button.dart';
+import 'package:solearium/src/core/widgets/atoms/buttons/app_button_size.dart';
+import 'package:solearium/src/core/widgets/atoms/buttons/app_button_state.dart';
+import 'package:solearium/src/core/widgets/atoms/buttons/app_button_tokens.dart';
 
 /// A ghost button (also known as a text button) with no background or border.
 /// Used for low-emphasis actions.
-class KitGhostButton extends StatelessWidget {
-  const KitGhostButton({
+class AppGhostButton extends StatelessWidget {
+  const AppGhostButton({
     required this.onPressed,
     required this.child,
     super.key,
     this.leading,
     this.trailing,
-    this.state = KitButtonState.enabled,
-    this.size = KitButtonSize.medium,
+    this.state = AppButtonState.enabled,
+    this.size = AppButtonSize.medium,
     this.fixedSize,
     this.minimumSize,
     this.color,
@@ -24,8 +24,8 @@ class KitGhostButton extends StatelessWidget {
   final Widget child;
   final Widget? leading;
   final Widget? trailing;
-  final KitButtonState state;
-  final KitButtonSize size;
+  final AppButtonState state;
+  final AppButtonSize size;
   final Size? fixedSize;
   final Size? minimumSize;
   final Color? color;
@@ -35,7 +35,7 @@ class KitGhostButton extends StatelessWidget {
     final theme = Theme.of(context);
     final effectiveColor = color ?? theme.colorScheme.primary;
 
-    return KitBaseButton(
+    return AppBaseButton(
       onPressed: onPressed,
       leading: leading,
       trailing: trailing,
@@ -48,8 +48,8 @@ class KitGhostButton extends StatelessWidget {
       minimumSize: minimumSize,
       // We rely on size-based padding now.
       // If you want the old "compact" look by default, use
-      // size: KitButtonSize.small
-      borderRadius: BorderRadius.circular(KitButtonTokens.radius),
+      // size: AppButtonSize.small
+      borderRadius: BorderRadius.circular(AppButtonTokens.radius),
       child: child,
     );
   }

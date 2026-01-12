@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:solearium/src/core/widgets/atoms/buttons/kit_button_size.dart';
-import 'package:solearium/src/core/widgets/atoms/buttons/kit_button_state.dart';
-import 'package:solearium/src/core/widgets/atoms/buttons/kit_button_tokens.dart';
+import 'package:solearium/src/core/widgets/atoms/buttons/app_button_size.dart';
+import 'package:solearium/src/core/widgets/atoms/buttons/app_button_state.dart';
+import 'package:solearium/src/core/widgets/atoms/buttons/app_button_tokens.dart';
 
 /// A customizable base button that serves as the foundation for
 /// other button types.
 /// Uses [ElevatedButton] internally to leverage Material Design's built-in
 /// behaviors for hover, focus, and elevation.
-class KitBaseButton extends StatelessWidget {
-  const KitBaseButton({
+class AppBaseButton extends StatelessWidget {
+  const AppBaseButton({
     required this.onPressed,
     required this.child,
     super.key,
     this.leading,
     this.trailing,
-    this.state = KitButtonState.enabled,
-    this.size = KitButtonSize.medium,
+    this.state = AppButtonState.enabled,
+    this.size = AppButtonSize.medium,
     this.backgroundColor,
     this.foregroundColor,
     this.borderSide,
@@ -42,11 +42,11 @@ class KitBaseButton extends StatelessWidget {
   /// A widget to display after the [child].
   final Widget? trailing;
 
-  /// The current state of the button. Defaults to [KitButtonState.enabled].
-  final KitButtonState state;
+  /// The current state of the button. Defaults to [AppButtonState.enabled].
+  final AppButtonState state;
 
-  /// The size of the button. Defaults to [KitButtonSize.medium].
-  final KitButtonSize size;
+  /// The size of the button. Defaults to [AppButtonSize.medium].
+  final AppButtonSize size;
 
   /// The background color of the button.
   /// Can be a [Color] or a [WidgetStateProperty<Color?>].
@@ -95,8 +95,8 @@ class KitBaseButton extends StatelessWidget {
       return null;
     }
 
-    final isLoading = state == KitButtonState.loading;
-    final isDisabled = state == KitButtonState.disabled;
+    final isLoading = state == AppButtonState.loading;
+    final isDisabled = state == AppButtonState.disabled;
 
     final effectiveOnPressed = (isDisabled || isLoading) ? null : onPressed;
 
@@ -128,14 +128,14 @@ class KitBaseButton extends StatelessWidget {
     );
   }
 
-  EdgeInsetsGeometry _getPaddingForSize(KitButtonSize size) {
+  EdgeInsetsGeometry _getPaddingForSize(AppButtonSize size) {
     switch (size) {
-      case KitButtonSize.small:
-        return KitButtonTokens.paddingSmall;
-      case KitButtonSize.large:
-        return KitButtonTokens.paddingLarge;
-      case KitButtonSize.medium:
-        return KitButtonTokens.paddingMedium;
+      case AppButtonSize.small:
+        return AppButtonTokens.paddingSmall;
+      case AppButtonSize.large:
+        return AppButtonTokens.paddingLarge;
+      case AppButtonSize.medium:
+        return AppButtonTokens.paddingMedium;
     }
   }
 

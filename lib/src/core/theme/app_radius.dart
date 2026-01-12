@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 class AppRadius {
   const AppRadius._();
 
-  static const double s = 4.0;
-  static const double m = 8.0;
-  static const double l = 12.0;
-  static const double xl = 16.0;
-  static const double xxl = 24.0;
-  static const double full = 999.0; // For capsules/circles
+  static const double s = 4;
+  static const double m = 8;
+  static const double l = 12;
+  static const double xl = 16;
+  static const double xxl = 24;
+  static const double full = 999; // For capsules/circles
 
   // Radius Objects
   static const Radius radiusS = Radius.circular(s);

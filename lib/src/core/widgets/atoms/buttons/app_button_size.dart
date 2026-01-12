@@ -1,5 +1,5 @@
-/// Defines the standard sizes for Kit buttons.
-enum KitButtonSize {
+/// Defines the standard sizes for App buttons.
+enum AppButtonSize {
   /// Compact button, suitable for lists, tables, or dense UIs.
   /// Typically has less padding and smaller text.
   small,

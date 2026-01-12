@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:solearium/src/core/widgets/atoms/buttons/kit_button_tokens.dart';
+import 'package:solearium/src/core/widgets/atoms/buttons/app_button_tokens.dart';
 
 /// A standardized icon button for the app.
 /// Wraps [IconButton] to provide consistent styling and behavior.
-class KitIconButton extends StatelessWidget {
-  const KitIconButton({
+class AppIconButton extends StatelessWidget {
+  const AppIconButton({
     required this.onPressed,
     required this.icon,
     super.key,
@@ -30,7 +30,7 @@ class KitIconButton extends StatelessWidget {
     return IconButton(
       onPressed: onPressed,
       icon: icon,
-      iconSize: iconSize ?? KitButtonTokens.iconSize,
+      iconSize: iconSize ?? AppButtonTokens.iconSize,
       padding: padding,
       tooltip: tooltip,
       color: color ?? theme.colorScheme.onSurfaceVariant,

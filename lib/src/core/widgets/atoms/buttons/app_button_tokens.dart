@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-/// Centralized design tokens for the Kit button system.
-class KitButtonTokens {
+/// Centralized design tokens for the App button system.
+class AppButtonTokens {
   /// Default border radius for buttons.
   static const double radius = 8;
 

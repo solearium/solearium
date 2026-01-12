@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:solearium/src/core/widgets/atoms/buttons/kit_base_button.dart';
-import 'package:solearium/src/core/widgets/atoms/buttons/kit_button_size.dart';
-import 'package:solearium/src/core/widgets/atoms/buttons/kit_button_state.dart';
-import 'package:solearium/src/core/widgets/atoms/buttons/kit_button_tokens.dart';
+import 'package:solearium/src/core/widgets/atoms/buttons/app_base_button.dart';
+import 'package:solearium/src/core/widgets/atoms/buttons/app_button_size.dart';
+import 'package:solearium/src/core/widgets/atoms/buttons/app_button_state.dart';
+import 'package:solearium/src/core/widgets/atoms/buttons/app_button_tokens.dart';
 
 /// A secondary button used for alternative actions.
 /// Typically has a muted background color.
-class KitSecondaryButton extends StatelessWidget {
-  const KitSecondaryButton({
+class AppSecondaryButton extends StatelessWidget {
+  const AppSecondaryButton({
     required this.onPressed,
     required this.child,
     super.key,
     this.leading,
     this.trailing,
-    this.state = KitButtonState.enabled,
-    this.size = KitButtonSize.medium,
+    this.state = AppButtonState.enabled,
+    this.size = AppButtonSize.medium,
     this.fixedSize,
     this.minimumSize,
   });
@@ -23,15 +23,15 @@ class KitSecondaryButton extends StatelessWidget {
   final Widget child;
   final Widget? leading;
   final Widget? trailing;
-  final KitButtonState state;
-  final KitButtonSize size;
+  final AppButtonState state;
+  final AppButtonSize size;
   final Size? fixedSize;
   final Size? minimumSize;
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    return KitBaseButton(
+    return AppBaseButton(
       onPressed: onPressed,
       leading: leading,
       trailing: trailing,
@@ -39,10 +39,10 @@ class KitSecondaryButton extends StatelessWidget {
       size: size,
       backgroundColor: theme.colorScheme.secondaryContainer,
       foregroundColor: theme.colorScheme.onSecondaryContainer,
-      elevation: KitButtonTokens.elevationNone,
+      elevation: AppButtonTokens.elevationNone,
       fixedSize: fixedSize,
       minimumSize: minimumSize,
-      borderRadius: BorderRadius.circular(KitButtonTokens.radius),
+      borderRadius: BorderRadius.circular(AppButtonTokens.radius),
       child: child,
     );
   }

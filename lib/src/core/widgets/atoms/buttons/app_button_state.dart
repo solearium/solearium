@@ -1,5 +1,5 @@
-/// Defines the possible states of a Kit button.
-enum KitButtonState {
+/// Defines the possible states of a App button.
+enum AppButtonState {
   /// The button is active and can be interacted with.
   enabled,
 

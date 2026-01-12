@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:solearium/src/core/widgets/atoms/buttons/kit_button_state.dart';
+import 'package:solearium/src/core/widgets/atoms/buttons/app_button_state.dart';
 
 /// A button that looks like a hyperlink.
 /// Used for inline actions or "Forgot Password" type links.
-class KitLinkButton extends StatelessWidget {
-  const KitLinkButton({
+class AppLinkButton extends StatelessWidget {
+  const AppLinkButton({
     required this.onPressed,
     required this.text,
     super.key,
-    this.state = KitButtonState.enabled,
+    this.state = AppButtonState.enabled,
     this.style,
     this.color,
   });
 
   final VoidCallback? onPressed;
   final String text;
-  final KitButtonState state;
+  final AppButtonState state;
   final TextStyle? style;
   final Color? color;
 
@@ -25,8 +25,8 @@ class KitLinkButton extends StatelessWidget {
     final effectiveColor = color ?? theme.colorScheme.primary;
     final effectiveStyle = style ?? theme.textTheme.bodyMedium;
 
-    final isLoading = state == KitButtonState.loading;
-    final isDisabled = state == KitButtonState.disabled;
+    final isLoading = state == AppButtonState.loading;
+    final isDisabled = state == AppButtonState.disabled;
     final effectiveOnPressed =
         (isDisabled || isLoading) ? null : onPressed;
 
