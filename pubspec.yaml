@@ -79,7 +79,7 @@ dev_dependencies:
   
   json_serializable: ^6.11.2
   mocktail: ^1.0.4
-  objectbox_generator: ^5.1.0
+ 
   retrofit_generator: ^10.2.1
   very_good_analysis: ^10.0.0
 
@@ -126,3 +126,6 @@ flutter:
 flutter_gen:
   output: lib/src/core/constants/generated/
   line_length: 80
+
+dependency_overrides:
+  analyzer: ^8.0.0
