@@ -1,6 +1,6 @@
 # 🧭 Team Workflow Guide
 
-This document explains our GitHub workflow.
+This document explains our GitHub issues workflow.
 
 ---
 
@@ -38,10 +38,3 @@ This document explains our GitHub workflow.
 - Always include `Fixes #<id>` in PR description
 - Small, focused PRs are easier to review
 
----
-
-## 🔧 Admin Notes
-- Branch protection enabled on `main`
-- Only admins can merge PRs
-- Merges require all status checks to pass
-- `/claim` assigns issues automatically
