@@ -11,7 +11,7 @@ Thank you for contributing! Please follow these steps carefully.
 2. Clone your fork locally.
 
 ```bash 
-git clone https://github.com/sac-iitd/<repo-name>.git
+git clone https://github.com/solearium/<repo-name>.git
 ```
 
 
