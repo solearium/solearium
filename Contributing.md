@@ -32,6 +32,7 @@ git checkout -b <branch-name>
 ---
 
 ### 🧠 Working on Issues
+refer to [Working_on_issues.md](./Working_on_issues.md) for more details
 
 1. Find an issue labeled `🕳️ Unassigned` in the Issues tab.
 
@@ -68,7 +69,7 @@ When you open a PR, follow these rules to make sure it’s accepted:
 
   Title: `Fix: correct footer link color`
   Body: `Fixes #52`
-
+- You can use this template for PR [PULL_REQUEST_TEMPLATE.md](./PULL_REQUEST_TEMPLATE.md)
 
 
 **🌟 For New Features**
